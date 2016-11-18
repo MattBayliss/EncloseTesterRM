@@ -4,6 +4,8 @@ Just a personal experiment, whilst trying to debug an issue with creating Record
 The subject of this test is a RecordType which has the Enclosed field defaulted to ticked, or "yes". When enclosed is ticked, the Assignee becomes the 
 Record's Container.
 
+A full writeup of the issue is [on my blog][blog].
+
 The bug being tested is when a user tries to untick Enclosed, and set their own Assignee, those settings appear to be ignored, and the Enclosed remains
 ticked. I suspected that the order in which the fields are applied to the record mattered, and this experiment was to check that.
 
@@ -50,3 +52,5 @@ The results of my experiment showed that the order does matter in RM 8.3 - in th
 Running this program on TRIM 7 and RM 8.1 environments showed that all permutations failed - there's an underlying issue with TRIM/RM, which I
 confirmed using their own thick client. (The user would have to save an orginal "Enclosed" record, and then edit it to un-enclose and assign as
 needed).
+
+[blog]: http://mattbayliss.com/trimsdk/2016/11/18/property-order-for-enclosed-records-in-hpe-rm.html "Property Order for Enclosed Records in HPE Records Manager"
